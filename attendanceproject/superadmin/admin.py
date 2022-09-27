@@ -9,3 +9,7 @@ from .models import *
 class FileUpload(admin.ModelAdmin):
     list_display = ['id', 'coures', 'branch', 'year', 'file']
 
+@admin.register(CreateAccounts)
+class CreateAccounts(admin.ModelAdmin):
+    list_display = ['id', 'studentPrn','studentName','studentEmail','studentNumber']
+

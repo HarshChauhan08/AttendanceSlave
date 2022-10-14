@@ -14,3 +14,8 @@ class CreateAccounts(models.Model):
     studentName = models.CharField(max_length=50, null = False)
     studentEmail = models.EmailField(max_length=254)
     studentNumber = models.IntegerField(null = True, blank=False, unique=True)
+
+class AdminAccounts(models.Model):
+    adminName = models.CharField(max_length=50)
+    adminEmail = models.EmailField(max_length=254, null = True)
+    adminPassword = models.CharField(max_length=50)

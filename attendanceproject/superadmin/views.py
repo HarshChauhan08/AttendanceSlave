@@ -3,9 +3,12 @@ from django.http import HttpResponse
 from django import forms
 from attendanceproject.settings import MEDIA_URL
 from .models import *
+from .data_base_admin import *
 from .import urls
 import pymongo
 import csv
+from django.contrib.auth.models import User
+
 
 # Create your views here.
 client = pymongo.MongoClient("mongodb://localhost:27017/")
@@ -37,9 +40,30 @@ def SaveData(request):
                 MakeAccounts(file_csv) 
         return render(request, 'superadmin/uploadfile.html')
 
-def ShowAccounts(rqeuest):
+def ShowAccounts(request):
         StudentDetails = CreateAccounts.objects.all()
         context = {'details':StudentDetails}
         # for item in StudentDetails:
         #         print(item.studentPrn,item.studentName, item.studentEmail, item.studentNumber)
-        return render(rqeuest, 'superadmin/UpdateStudent.html', context)
+        return render(request, 'superadmin/UpdateStudent.html', context)
+
+def Login(request):
+        return render(request, 'superadmin/login.html')
+
+def SignUp(request):
+         if request.method == 'POST':
+                adminName = request.POST['admin_name']
+                adminEmail = request.POST['admin_email']
+                adminPassword = request.POST['admin_password']
+
+                #Validation
+
+                #creat user
+                admin_account = User.objects.create_user(adminName,adminEmail,adminPassword)
+                admin_account.save()
+        # else:
+        #         return HttpResponse("Not Allowed")
+         return render(request, 'superadmin/signup.html')
+
+def ForgotPassword(request):
+        return render(request, 'superadmin/forgot.html')

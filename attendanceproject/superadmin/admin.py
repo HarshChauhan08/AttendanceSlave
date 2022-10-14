@@ -13,3 +13,6 @@ class FileUpload(admin.ModelAdmin):
 class CreateAccounts(admin.ModelAdmin):
     list_display = ['id', 'studentPrn','studentName','studentEmail','studentNumber']
 
+@admin.register(AdminAccounts)
+class AdminAccounts(admin.ModelAdmin):
+    list_display = ['id', 'adminName','adminEmail','adminPassword']

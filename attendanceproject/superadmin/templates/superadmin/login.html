@@ -16,7 +16,7 @@ License: You must have a valid license purchased only from themeforest(the above
 	<!--begin::Head-->
 	<head><base href="../../../../">
 		<meta charset="utf-8" />
-		<title>Sign In </title>
+		<title>Log In</title>
 		<meta name="description" content="Singin page example" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 		<link rel="canonical" href="https://keenthemes.com/metronic" />
@@ -54,37 +54,33 @@ License: You must have a valid license purchased only from themeforest(the above
 						<!--begin::Signin-->
 						<div class="login-form">
 							<!--begin::Form-->
-							<form class="form" id="kt_login_singin_form" action="/Login" method = "POST">
+							<form  action="superadmin/Login/" method = "post">
 								{% csrf_token %}
 								<!--begin::Title-->
 								<div class="pb-5 pb-lg-15">
-									<h3 class="font-weight-bolder text-dark font-size-h2 font-size-h1-lg">Sign In</h3>
+									<h3 class="font-weight-bolder text-dark font-size-h2 font-size-h1-lg">Log In</h3>
 									<div class="text-muted font-weight-bold font-size-h4">New Here?
 									<a href="custom/pages/login/login-4/signup.html" class="text-primary font-weight-bolder">Create Account</a></div>
 								</div>
 								<!--begin::Title-->
 								<!--begin::Form group-->
 								<div class="form-group">
-									<label class="font-size-h6 font-weight-bolder text-dark">Admin Name</label>
-									<input id = "admin_name" class="form-control form-control-solid h-auto py-7 px-6 rounded-lg border-0" type="text" name="username" autocomplete="off" />
-								</div>
-								<div class="form-group">
-									<label class="font-size-h6 font-weight-bolder text-dark">Your Email</label>
-									<input id = "admin_email" class="form-control form-control-solid h-auto py-7 px-6 rounded-lg border-0" type="text" name="username" autocomplete="off" />
+									<label class="font-size-h6 font-weight-bolder text-dark" for ="adminName">Admin Name</label>
+									<input id = "adminName" name="adminName" class="form-control form-control-solid h-auto py-7 px-6 rounded-lg border-0" type="text"  autocomplete="off" />
 								</div>
 								<!--end::Form group-->
 								<!--begin::Form group-->
 								<div class="form-group">
 									<div class="d-flex justify-content-between mt-n5">
-										<label class="font-size-h6 font-weight-bolder text-dark pt-5">Your Password</label>
+										<label class="font-size-h6 font-weight-bolder text-dark pt-5" for="adminPassword">Your Password</label>
 										<a href="custom/pages/login/login-4/forgot.html" class="text-primary font-size-h6 font-weight-bolder text-hover-primary pt-5">Forgot Password ?</a>
 									</div>
-									<input id = "admin_password" class="form-control form-control-solid h-auto py-7 px-6 rounded-lg border-0" type="password" name="password" autocomplete="off" />
+									<input id = "adminPassword"  name="adminPassword" class="form-control form-control-solid h-auto py-7 px-6 rounded-lg border-0" type="password" autocomplete="off" />
 								</div>
 								<!--end::Form group-->
 								<!--begin::Action-->
 								<div class="pb-lg-0 pb-5">
-									<button type="submit" id="kt_login_singin_form_submit_button" class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3">Sign In</button>
+									<button type="submit"  class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3">Sign In</button>
 									<button type="button" class="btn btn-light-primary font-weight-bolder px-8 py-4 my-3 font-size-lg">
 									<span class="svg-icon svg-icon-md">
 										<!--begin::Svg Icon | path:/static/superadmin/media/svg/social-icons/google.svg-->

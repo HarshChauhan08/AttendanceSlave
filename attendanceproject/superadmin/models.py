@@ -15,7 +15,9 @@ class CreateAccounts(models.Model):
     studentEmail = models.EmailField(max_length=254)
     studentNumber = models.IntegerField(null = True, blank=False, unique=True)
 
-class AdminAccounts(models.Model):
-    adminName = models.CharField(max_length=50)
-    adminEmail = models.EmailField(max_length=254, null = True)
-    adminPassword = models.CharField(max_length=50)
+class AdminAccount(models.Model):
+    AP_ID = models.IntegerField(null = False, blank=False, unique=True)
+    adminName = models.CharField(max_length=50, null = False)
+    adminEmail = models.EmailField(max_length=254)
+    adminPassword = models.CharField(max_length=50, null = False)
+    loginStatus = models.BooleanField(default = False)

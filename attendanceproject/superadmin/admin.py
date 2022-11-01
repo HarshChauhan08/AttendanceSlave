@@ -7,12 +7,12 @@ from .models import *
 
 @admin.register(FileUpload)
 class FileUpload(admin.ModelAdmin):
-    list_display = ['id', 'coures', 'branch', 'year', 'file']
+    list_display = ['coures', 'branch', 'year', 'file']
 
 @admin.register(CreateAccounts)
 class CreateAccounts(admin.ModelAdmin):
-    list_display = ['id', 'studentPrn','studentName','studentEmail','studentNumber']
+    list_display = ['studentPrn','studentName','studentEmail','studentNumber']
 
-@admin.register(AdminAccounts)
-class AdminAccounts(admin.ModelAdmin):
-    list_display = ['id', 'adminName','adminEmail','adminPassword']
+@admin.register(AdminAccount)
+class AdminAccount(admin.ModelAdmin):
+    list_display = ['AP_ID', 'adminName','adminEmail','adminPassword']

@@ -1,7 +1,7 @@
 import pymongo
 from django.shortcuts import redirect
-# class user_authentication:
-client = pymongo.MongoClient("mongodb://localhost:27017/")
+# class user_authentication: 
+client = pymongo.MongoClient("mongodb+srv://harsh:harsh@attendanceproject.rrlaxic.mongodb.net/?retryWrites=true&w=majority")
 db = client['AttendanceProject']
 
     # def __init__(self,client,db):

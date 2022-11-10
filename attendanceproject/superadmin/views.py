@@ -17,7 +17,7 @@ import superadmin.authenticate_user as au
 # Create your views here.
 # User Name
 
-client = pymongo.MongoClient("mongodb://localhost:27017/")
+client = pymongo.MongoClient("mongodb+srv://harsh:harsh@attendanceproject.rrlaxic.mongodb.net/?retryWrites=true&w=majority") 
 db = client['AttendanceProject']
 collection = db['superadmin_createaccounts']
 
@@ -47,7 +47,7 @@ def Login(request):
 
 
         
-@au.entry_check
+# @au.entry_check
 def MakeAccounts(CsvFile):
         db = client['AttendanceProject']
         collection = db['superadmin_createaccounts']
@@ -60,7 +60,7 @@ def MakeAccounts(CsvFile):
                         data.append(dict1)
         collection.insert_many(data)
 
-@au.entry_check
+# @au.entry_check
 def SaveData(request):
         value = request.session.get('user')
         permission = au.check_if_allowed(value)

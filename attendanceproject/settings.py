@@ -12,7 +12,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import mongoengine
 
+# hosts = ["ac-ty6dtis-shard-00-01.oks9xkg.mongodb.net:27017", "ac-ty6dtis-shard-00-00.oks9xkg.mongodb.net:27017", "ac-ty6dtis-shard-00-02.oks9xkg.mongodb.net:27017"]
+
+mongoengine.connect(db="AttendanceProject", host="ac-ty6dtis-shard-00-01.oks9xkg.mongodb.net", username="HarshChauhan", password="HarshChauhan16")
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -88,17 +92,16 @@ WSGI_APPLICATION = 'attendanceproject.wsgi.application'
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'djongo',
-#         'NAME': 'AttendanceProject', 
+#         'NAME': 'AttendanceProject',
 #     }
 # }
-
 DATABASES = {
         'default': {
             'ENGINE': 'djongo',
             'NAME': 'AttendanceProject',
             'ENFORCE_SCHEMA': False,
             'CLIENT': {
-                'host': 'mongodb+srv://harsh:harsh@attendanceproject.rrlaxic.mongodb.net/?retryWrites=true&w=majority'
+                'host': 'mongodb+srv://HarshChauhan:HarshChauhan16@cluster0.oks9xkg.mongodb.net/?retryWrites=true&w=majority'
             }  
         }
 }
